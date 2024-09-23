@@ -77,7 +77,9 @@ namespace FociWebapp.Pages
                 }
             }
 
-            TeamResults = teamResults.Values.ToList();
+            TeamResults = teamResults.Values
+                .OrderByDescending(tr => tr.Points)
+                .ToList();
         }
     }
 }
